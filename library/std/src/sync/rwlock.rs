@@ -589,7 +589,7 @@ impl<'rwlock, T: ?Sized> RwLockReadGuard<'rwlock, T> {
 }
 
 impl<'rwlock, T: ?Sized> RwLockWriteGuard<'rwlock, T> {
-    /// Create a new instance of `RwLockWriteGuard<T>` from a `RwLock<T>`.
+    /// Creates a new instance of `RwLockWriteGuard<T>` from a `RwLock<T>`.
     // SAFETY: if and only if `lock.inner.write()` (or `lock.inner.try_write()`) has been
     // successfully called from the same thread before instantiating this object.
     unsafe fn new(lock: &'rwlock RwLock<T>) -> LockResult<RwLockWriteGuard<'rwlock, T>> {
