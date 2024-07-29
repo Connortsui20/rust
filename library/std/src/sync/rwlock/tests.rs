@@ -1,3 +1,5 @@
+use rand::Rng;
+
 use crate::hint::spin_loop;
 use crate::sync::atomic::{AtomicUsize, Ordering};
 use crate::sync::mpsc::channel;
@@ -6,7 +8,6 @@ use crate::sync::{
     RwLockWriteGuard, TryLockError,
 };
 use crate::thread;
-use rand::Rng;
 
 #[derive(Eq, PartialEq, Debug)]
 struct NonCopy(i32);
